@@ -1,20 +1,27 @@
-"use client"
+"use client";
 
-import Lottie from "lottie-react";
+import { useEffect, useRef } from "react";
 
-const AnimationLottie = ({ animationPath, width }) => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationPath,
-    style: {
-      width: '95%',
+const AnimationLottie = ({ animationPath, width = "95%" }) => {
+  const animationRef = useRef(null);
+
+  useEffect(() => {
+    async function loadLottie() {
+      const lottie = await import("lottie-web");
+
+      lottie.default.loadAnimation({
+        container: animationRef.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: animationPath,
+      });
     }
-  };
 
-  return (
-    <Lottie {...defaultOptions} />
-  );
+    loadLottie();
+  }, [animationPath]);
+
+  return <div ref={animationRef} style={{ width }} />;
 };
 
 export default AnimationLottie;
