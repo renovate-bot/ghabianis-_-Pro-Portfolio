@@ -40,7 +40,7 @@ function ContactForm() {
         userInput
       );
 
-      toast.success("Message sent successfully!");
+       toast.success("Message sent successfully!");
       setUserInput({
         name: "",
         email: "",

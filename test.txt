@@ -32,7 +32,7 @@
 - [Deployment](#deployment-rocket)
 - [Tutorials](#tutorials-wrench)
   - [Gmail App Password Setup](#gmail-app-password-setup)
-  - [Create a Telegram Bot](#create-a-telegram-bot)
+  - [Create a Messenger Bot](#create-a-messenger-bot)
   - [Fetching Blog from dev.to](#fetching-blog-from-devto)
 - [Packages Used](#packages-used-package)
 
@@ -213,18 +213,32 @@ Whenever you push changes to your GitHub repo, Vercel will automatically redeplo
 6. In the **Select app** dropdown, choose "Mail", and for **Select device**, choose "Other (Custom name)" and name it appropriately (e.g., "Portfolio").
 7. Click **Generate**. A 16-character app password will be displayed. Save this password for later use in your environment variables (e.g., `GMAIL_PASSKEY`).
 
-## Create a Telegram Bot
+## Create a Messenger Bot
 
-1. **Open Telegram** and search for the user **@BotFather**.
-2. Start a chat with BotFather and use the `/newbot` command to create a new bot.
-3. Choose a name for your bot.
-4. Set a unique username for your bot (must end with `bot`, e.g., `PortfolioAssistantBot`).
-5. Once your bot is created, BotFather will send you a **Token**. Save this token, as you will need it for your environment variables (e.g., `TELEGRAM_BOT_TOKEN`).
-6. To get your chat ID:
-   - Open your bot in Telegram and send it a message.
-   - Visit the following URL in your browser, replacing `BOT_TOKEN` with your actual bot token:  
-     `https://api.telegram.org/bot<BOT_TOKEN>/getUpdates`
-   - Look for the `chat` object in the response, which contains your **chat ID** (you can use this value for `TELEGRAM_CHAT_ID`).
+1. **Create a Facebook App**:
+   - Go to [Facebook for Developers](https://developers.facebook.com/) and create a new app.
+   - Add the **Messenger** product to your app.
+
+2. **Generate a Page Access Token**:
+   - In the Messenger settings, generate a **Page Access Token** for your Facebook page.
+   - Save this token for later use in your environment variables (e.g., `MESSENGER_PAGE_ACCESS_TOKEN`).
+
+3. **Set Up Webhooks**:
+   - In the Messenger settings, set up a webhook URL for your bot.
+   - Verify the webhook using a **Verify Token** (e.g., `MESSENGER_VERIFY_TOKEN`).
+
+4. **Update Environment Variables**:
+   - Replace `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` with:
+     ```env
+     MESSENGER_PAGE_ACCESS_TOKEN=
+     MESSENGER_VERIFY_TOKEN=
+     ```
+
+5. **Update Bot Logic**:
+   - Replace Telegram bot logic with Messenger bot logic using the Facebook Graph API.
+
+6. **Test Your Bot**:
+   - Send a message to your Facebook page and verify the bot's response.
 
 ## Fetching Blog from dev.to
 

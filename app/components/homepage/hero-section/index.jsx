@@ -131,6 +131,20 @@ function HeroSection() {
                 <span className="text-amber-300">Docker</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">AWS</span>
+                <span className="text-gray-400">{", "}</span>
+                <span className="text-amber-300">Laravel</span>
+                <span className="text-gray-400">{", "}</span>
+                <span className="text-amber-300">HonoJs</span>
+                <span className="text-gray-400">{", "}</span>
+                <span className="text-amber-300">VueJs</span>
+                <span className="text-gray-400">{", "}</span>
+                <span className="text-amber-300">Postgresql</span>
+                <span className="text-gray-400">{", "}</span>
+                <span className="text-amber-300">RabbitMQ</span>
+                <span className="text-gray-400">{", "}</span>
+                <span className="text-amber-300">N8N</span>
+                <span className="text-gray-400">{", "}</span>
+                <span className="text-amber-300">Zapier</span>
                 <span className="text-gray-400">{"'],"}</span>
               </div>
               <div>
