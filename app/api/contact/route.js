@@ -26,8 +26,8 @@ export async function sendEmail(payload, message) {
   const { name, email, message: userMessage } = payload;
 
   const msg = {
-    to: `${process.env.RECIVER_EMAIL}`, // Your email address
-    from: `${process.env.RECIVER_EMAIL}`, // Verified sender email
+    to: `${process.env.RECIVER_EMAIL}`,
+    from: `${process.env.RECIVER_EMAIL}`,
     subject: `New Message From ${name}`,
     text: message,
     html: generateEmailTemplate(name, email, userMessage),

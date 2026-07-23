@@ -1,5 +1,8 @@
+import { SiSpringboot } from "react-icons/si";
+
 export const skillsData = [
   'CSS',
+  'SpringBoot',
   'Javascript',
   'Typescript',
   'React',
